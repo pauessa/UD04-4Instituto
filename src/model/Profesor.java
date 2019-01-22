@@ -14,14 +14,17 @@ import java.io.Serializable;
  public class Profesor implements Serializable  {
       private int id;
       private Nombre nombre;
+      private TipoFuncionario tipoFuncionario;
+
+    public Profesor(Nombre nombre, TipoFuncionario tipoFuncionario) {
+        this.nombre = nombre;
+        this.tipoFuncionario = tipoFuncionario;
+    }
  
       public Profesor(){
       }
 
-    public Profesor(Nombre nombre) {
-        this.nombre = nombre;
-    }
- 
+
   
     public int getId() {
         return id;
@@ -37,6 +40,14 @@ import java.io.Serializable;
 
     public void setNombre(Nombre nombre) {
         this.nombre = nombre;
+    }
+
+    public TipoFuncionario getTipoFuncionario() {
+        return tipoFuncionario;
+    }
+
+    public void setTipoFuncionario(TipoFuncionario tipoFuncionario) {
+        this.tipoFuncionario = tipoFuncionario;
     }
     
 

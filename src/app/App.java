@@ -7,6 +7,7 @@ package app;
 
 import model.Nombre;
 import model.Profesor;
+import model.TipoFuncionario;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -30,7 +31,7 @@ public class App {
         SessionFactory factory = new Configuration().configure().buildSessionFactory(); 
 
         // CREAMOS UN OBJETO
-        Profesor profesor=new Profesor(new Nombre("Antonio","Martinez","Aroca"));
+        Profesor profesor=new Profesor(new Nombre("juan","Lopez","fernandez"),TipoFuncionario.INTERINO);
 
         //CREAR UNA SESION
         Session session=factory.openSession();

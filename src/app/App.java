@@ -19,6 +19,7 @@ public class App {
     /**
      * @param args the command line arguments
      */
+ 
     public static void main(String[] args) {
          //CREAMOS CONEXION
         //SessionFactory sessionFactory;
@@ -28,21 +29,14 @@ public class App {
         SessionFactory factory = new Configuration().configure().buildSessionFactory(); 
 
         // CREAMOS UN OBJETO
-        Profesor profesor=new Profesor(80,"Pepe","Garcia","Perez");
+        Profesor profesor=new Profesor("Pepe","Garcia","Perez");
 
         //CREAR UNA SESION
         Session session=factory.openSession();
         session.beginTransaction();
 
         //GUARDAR OBJETO
-        //session.save(profesor);
-
-        Profesor profesor2=(Profesor) session.get(Profesor.class, 1);
-        System.out.println(profesor2);
-
-
-        profesor.setNombre("Manola");
-        session.update(profesor);
+        session.save(profesor);
 
         //session.saveOrUpdate(profesor);
 

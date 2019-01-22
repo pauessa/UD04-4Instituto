@@ -3,12 +3,13 @@
  
 <hibernate-mapping>
     <class name="model.Profesor" table="Profesor" >
-      <id name="id" type="integer">
+        <id name="id" type="integer">
             <generator class="increment"/>
-      </id>
-      <property name="nombre" type="string"/>
-      <property name="ape1" type="string"/>
-      <property name="ape2" type="string"/>
-     
+        </id>
+        <component name="nombre">
+            <property name="nombre" type="string"/>
+            <property name="ape1" type="string"/>
+            <property name="ape2" type="string"/>
+        </component>
     </class>
- </hibernate-mapping>
+</hibernate-mapping>
